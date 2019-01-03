@@ -1,0 +1,353 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{FCE2BF56-F4CE-416B-9E82-79B89F0502D2}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AstroPi</RootNamespace>
+    <AssemblyName>AstroPi</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion Condition=" '$(TargetPlatformVersion)' == '' ">10.0.17763.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.15063.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WindowsXamlEnableOverview>true</WindowsXamlEnableOverview>
+    <PackageCertificateKeyFile>AstroPi_TemporaryKey.pfx</PackageCertificateKeyFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM64'">
+    <OutputPath>bin\ARM64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RestoreProjectStyle>PackageReference</RestoreProjectStyle>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Gamepad\GamepadManager.cs" />
+    <Compile Include="Gamepad\GamepadState.cs" />
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <None Include="AstroPi_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Audio\Astromech-Sounds\ALARM1.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\ALARM10.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\ALARM11.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\ALARM2.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\ALARM3.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\ALARM4.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\ALARM5.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\ALARM6.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\ALARM7.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\ALARM8.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\ALARM9.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\ANNOYED.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\CANTINA.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\CHORTLE.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\DOODOO.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\FAILURE.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\GROAN.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM1.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM10.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM11.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM12.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM13.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM14.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM15.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM16.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM17.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM18.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM19.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM2.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM20.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM21.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM22.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM23.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM24.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM25.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM3.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM4.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM5.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM6.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM7.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM8.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\HUM9.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\LEIA.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC1.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC10.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC11.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC12.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC13.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC14.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC15.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC16.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC17.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC18.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC19.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC2.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC20.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC21.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC22.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC23.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC24.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC25.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC26.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC27.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC28.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC29.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC3.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC30.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC31.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC32.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC33.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC34.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC35.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC36.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC4.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC5.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC6.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC7.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC8.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MISC9.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\MOTIVATR.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\OOH1.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\OOH2.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\OOH3.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\OOH4.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\OOH5.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\OOH6.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\OOH7.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\OVERHERE.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PATROL1.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC1.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC10.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC11.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC12.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC13.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC14.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC15.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC2.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC3.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC4.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC5.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC6.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC7.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC8.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\PROC9.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\QUESTION.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ1.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ10.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ11.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ12.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ13.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ14.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ15.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ16.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ17.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ18.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ19.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ2.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ20.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ21.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ22.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ23.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ3.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ4.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ5.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ6.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ7.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ8.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\RAZZ9.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SCREAM1.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SCREAM2.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SCREAM3.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SCREAM4.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT1.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT10.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT11.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT12.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT13.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT14.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT15.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT16.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT17.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT18.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT19.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT2.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT20.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT3.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT4.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT5.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT6.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT7.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT8.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SENT9.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\SHORTCKT.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\STARTSND.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST1.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST10.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST11.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST12.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST13.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST14.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST15.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST16.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST17.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST18.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST19.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST2.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST20.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST21.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST22.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST23.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST24.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST25.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST3.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST4.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST5.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST6.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST7.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST8.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WHIST9.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WOLFWSTL.mp3" />
+    <Content Include="Assets\Audio\Astromech-Sounds\WOWIE.mp3" />
+    <Content Include="Properties\Default.rd.xml" />
+    <Content Include="Assets\LockScreenLogo.scale-200.png" />
+    <Content Include="Assets\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
+    <Content Include="Assets\StoreLogo.png" />
+    <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.UniversalWindowsPlatform">
+      <Version>6.2.3</Version>
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

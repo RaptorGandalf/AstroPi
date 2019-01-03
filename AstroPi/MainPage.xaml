@@ -1,0 +1,23 @@
+﻿<Page
+    x:Class="AstroPi.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AstroPi"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid VerticalAlignment="Top">
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock x:Name="GamepadStatusText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Status" Grid.Row="0"/>
+        <TextBlock x:Name="LtsText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="-" Grid.Row="1"/>
+        <TextBlock x:Name="RtsText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="-" Grid.Row="2"/>
+        <TextBlock x:Name="ButtonsText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="-" Grid.Row="3"/>
+    </Grid>
+</Page>
