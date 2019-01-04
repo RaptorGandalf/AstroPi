@@ -119,8 +119,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Gamepad\GamepadManager.cs" />
-    <Compile Include="Gamepad\GamepadState.cs" />
+    <Compile Include="Audio\AudioManager.cs" />
+    <Compile Include="Input\GamepadState.cs" />
+    <Compile Include="Input\InputManger.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -145,7 +146,7 @@
     <Content Include="Assets\Audio\Astromech-Sounds\ALARM8.wav" />
     <Content Include="Assets\Audio\Astromech-Sounds\ALARM9.wav" />
     <Content Include="Assets\Audio\Astromech-Sounds\ANNOYED.wav" />
-    <Content Include="Assets\Audio\Astromech-Sounds\CANTINA.wav" />
+    <Content Include="Assets\Audio\Songs\CANTINA.wav" />
     <Content Include="Assets\Audio\Astromech-Sounds\CHORTLE.wav" />
     <Content Include="Assets\Audio\Astromech-Sounds\DOODOO.wav" />
     <Content Include="Assets\Audio\Astromech-Sounds\FAILURE.wav" />

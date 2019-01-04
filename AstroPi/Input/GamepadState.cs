@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Windows.Gaming.Input;
 
-namespace AstroPi
+namespace AstroPi.Input
 {
     public class GamepadState
     {

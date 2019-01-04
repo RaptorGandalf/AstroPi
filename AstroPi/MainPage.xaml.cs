@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AstroPi.Input;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,53 +23,25 @@ namespace AstroPi
     {
         public GamepadState GamepadState;
 
-        private GamepadManager _gamepadManager;
+        private InputManger _inputManager;
 
         public MainPage()
         {
             this.InitializeComponent();
-
-            _gamepadManager = new GamepadManager(InputRecieved);
 
             GamepadState = new GamepadState
             {
                 Connected = false
             };
 
+            _inputManager = new InputManger();
+
+            _inputManager.OnInputRecieved = InputRecieved;
         }
 
         private async void InputRecieved(GamepadState state)
         {
             GamepadState = state;
-
-            //just putting this here to try audio
-            if(state.Reading.Buttons == Windows.Gaming.Input.GamepadButtons.A)
-            {
-                var soundDirectory = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(@"Assets\Audio\Astromech-Sounds");
-
-                var files = await soundDirectory.GetFilesAsync();
-
-                var generator = new Random();
-
-                var fileIndex = generator.Next(0, files.Count - 1);
-
-                var file = files[fileIndex];
-
-                var mediaPlayer = new MediaPlayer
-                {
-                    Source = MediaSource.CreateFromStorageFile(file),
-                };
-
-                await Dispatcher.RunAsync(Windows.UI.Core.CoreDispatcherPriority.Normal, () =>
-                {
-                    //await Task.Delay(1);
-                    mediaPlayer.Play();
-
-                  //  Task.Delay(5000);
-                });
-
-                //mediaPlayer.Dispose();
-            }
 
             await UpdateInputUI();
         }
