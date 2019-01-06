@@ -20,6 +20,8 @@ namespace AstroPi.Audio
         private StorageFolder _astromechSoundFolder;
         private StorageFolder _songFolder;
 
+        private List<string> _astromechSoundFiles;
+
         public AudioManager()
         {
             _mediaPlayer = new MediaPlayer();
@@ -34,17 +36,26 @@ namespace AstroPi.Audio
         {
             _astromechSoundFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(ASTROMECH_SOUNDS);
             _songFolder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync(SONGS);
+
+            _astromechSoundFiles = new List<string>();
+
+            var astromechFiles = await _astromechSoundFolder.GetFilesAsync();
+
+            foreach(var file in astromechFiles)
+            {
+                _astromechSoundFiles.Add(file.Name);
+            }
         }
 
         public async Task PlayRandomAstromechSound()
         {
-            var files = await _astromechSoundFolder.GetFilesAsync();
-
             var generator = new Random();
 
-            var fileIndex = generator.Next(0, files.Count - 1);
-            
-            PlayFile(files[fileIndex]);
+            var fileIndex = generator.Next(0, _astromechSoundFiles.Count - 1);
+
+            var file = await _astromechSoundFolder.GetFileAsync(_astromechSoundFiles[fileIndex]);
+
+            PlayFile(file);
         }
 
         public async Task PlayCantinaSong()

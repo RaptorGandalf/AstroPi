@@ -1,4 +1,5 @@
 ﻿using AstroPi.Audio;
+using AstroPi.Logging;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -20,14 +21,22 @@ namespace AstroPi.Input
 
         public InputManger()
         {
+            Logger.Log("Configuring audio manager...");
+
             _audioManager = new AudioManager();
 
             _audioManager.Configure().Wait();
 
+            Logger.Log("Configuring gamepad events...");
+
             Gamepad.GamepadAdded += Gamepad_GamepadAdded;
             Gamepad.GamepadRemoved += Gamepad_GamepadRemoved;
 
+            Logger.Log("Starting input read...");
+
             Task.Factory.StartNew(() => ReadInput());
+
+            Logger.Log("Input manager startup complete!");
         }
         
         private async void ReadInput()

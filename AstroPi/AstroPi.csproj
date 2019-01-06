@@ -122,6 +122,7 @@
     <Compile Include="Audio\AudioManager.cs" />
     <Compile Include="Input\GamepadState.cs" />
     <Compile Include="Input\InputManger.cs" />
+    <Compile Include="Logging\Logger.cs" />
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>

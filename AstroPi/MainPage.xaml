@@ -8,16 +8,20 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
-    <Grid VerticalAlignment="Top">
-        <Grid.RowDefinitions>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-            <RowDefinition></RowDefinition>
-        </Grid.RowDefinitions>
-        <TextBlock x:Name="GamepadStatusText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Status" Grid.Row="0"/>
-        <TextBlock x:Name="LtsText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="-" Grid.Row="1"/>
-        <TextBlock x:Name="RtsText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="-" Grid.Row="2"/>
-        <TextBlock x:Name="ButtonsText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="-" Grid.Row="3"/>
+    <Grid VerticalAlignment="Top" Height="300" Margin="10,0,0,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="500" />
+            <ColumnDefinition Width="250" />
+        </Grid.ColumnDefinitions>
+        
+        <RichEditBox x:Name="ConsoleBox" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" TextWrapping="Wrap" 
+                     IsReadOnly="True" Grid.Column="0" Grid.RowSpan="4"></RichEditBox>
+
+        <StackPanel Grid.Column="1" Margin="10,0,0,0">
+            <TextBlock x:Name="GamepadStatusText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="Status" Grid.Row="0"/>
+            <TextBlock x:Name="LtsText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="-" Grid.Row="1"/>
+            <TextBlock x:Name="RtsText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="-" Grid.Row="2"/>
+            <TextBlock x:Name="ButtonsText" HorizontalAlignment="Left" TextWrapping="Wrap" Text="-" Grid.Row="3"/>
+        </StackPanel>
     </Grid>
 </Page>
