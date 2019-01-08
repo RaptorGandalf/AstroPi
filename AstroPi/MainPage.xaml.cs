@@ -1,5 +1,6 @@
 ﻿using AstroPi.Input;
 using AstroPi.Logging;
+using AstroPi.Serial;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -42,7 +43,7 @@ namespace AstroPi
             Task.Factory.StartNew(() => Setup());
         }
 
-        private void Setup()
+        private async void Setup()
         {
             Logger.Log("Welcome to AstroPi!");
 
@@ -54,9 +55,11 @@ namespace AstroPi
                 OnInputRecieved = InputRecieved
             };
 
-            Logger.Log("Done.");
+            Logger.Log("Configuring serial manager...");
 
-            Logger.Log("Setup complete!");
+            await SerialManager.Initialize();
+
+            Logger.Log("AstroPi ready!");
         }
 
         private async void InputRecieved(GamepadState state)

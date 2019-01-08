@@ -127,6 +127,9 @@
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Serial\SerialCommands.cs" />
+    <Compile Include="Serial\SerialConstants.cs" />
+    <Compile Include="Serial\SerialManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
