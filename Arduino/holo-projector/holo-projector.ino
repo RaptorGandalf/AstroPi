@@ -12,16 +12,20 @@
 #define WHITEPIN 0
 #define BLUEPIN 1
 
+#define MOVEMENT_THRESHOLD 40
+
 struct HoloProjector{
   int leftMotorPin;
   int rightMotorPin;
   int leftMotorBase;
   int rightMotorBase;
+  int leftMotorCurrent;
+  int rightMotorCurrent;
 };
 
 SimpleTimer projectorMoveTimer;
 
-HoloProjector projectors[1] = {{3, 2, 400, 400}};
+HoloProjector projectors[1] = {{3, 2, 400, 400, 400, 400}};
 
 int projectorCount = 1;
 
@@ -47,30 +51,41 @@ void loop() {
 
 void moveProjectors(){
   for(int i = 0; i < projectorCount; i++){
-    moveProjector(projectors[i]);  
+    moveProjector(&projectors[i]);  
   }
 }
 
-void moveProjector(HoloProjector projector){
+void moveProjector(HoloProjector * projector){
   int left = random(SERVOMIN, SERVOMAX);
   int right = random(SERVOMIN, SERVOMAX);
-
+  
   positionProjector(projector, left, right);
 }
 
 void resetProjectorPositions(){
   for(int i = 0; i < projectorCount; i++){
-    resetProjectorPosition(projectors[i]);
+    resetProjectorPosition(&projectors[i]);
   }
 }
 
-void resetProjectorPosition(HoloProjector projector){
-  positionProjector(projector, projector.leftMotorBase, projector.rightMotorBase);
+void resetProjectorPosition(HoloProjector * projector){
+  positionProjector(projector, projector->leftMotorBase, projector->rightMotorBase);
 }
 
-void positionProjector(HoloProjector projector, int leftMotorPosition, int rightMotorPosition){
-  pwm.setPWM(projector.leftMotorPin, 0, leftMotorPosition);
-  pwm.setPWM(projector.rightMotorPin, 0, rightMotorPosition);
+void positionProjector(HoloProjector * projector, int leftMotorPosition, int rightMotorPosition){
+  if(shouldMove(projector->leftMotorCurrent, leftMotorPosition)){
+    pwm.setPWM(projector->leftMotorPin, 0, leftMotorPosition);
+    projector->leftMotorCurrent = leftMotorPosition;  
+  }
+
+  if(shouldMove(projector->rightMotorCurrent, rightMotorPosition)){
+    pwm.setPWM(projector->rightMotorPin, 0, rightMotorPosition);
+    projector->rightMotorCurrent = rightMotorPosition;  
+  }
+}
+
+bool shouldMove(int currentPosition, int newPosition){
+  return abs(currentPosition - newPosition) > MOVEMENT_THRESHOLD;
 }
 
 void setupLights(){
